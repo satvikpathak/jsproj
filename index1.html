@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Lock Countdown</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            font-family: 'Courier New', monospace;
+        }
+
+        .countdown {
+            display: flex;
+            color: #00FF00;
+            font-size: 5rem;
+            letter-spacing: 0.5rem;
+        }
+
+        .digit {
+            display: inline-block;
+            width: 60px;
+            text-align: center;
+        }
+
+        /* Animating the minutes digit (from 5 to 0) */
+        @keyframes minutes {
+            0% { content: "5"; }
+            16.67% { content: "4"; }
+            33.34% { content: "3"; }
+            50.01% { content: "2"; }
+            66.68% { content: "1"; }
+            83.35% { content: "0"; }
+            100% { content: "0"; }
+        }
+
+        /* Animating the tens of seconds */
+        @keyframes tens {
+            0% { content: "9"; }
+            10% { content: "8"; }
+            20% { content: "7"; }
+            30% { content: "6"; }
+            40% { content: "5"; }
+            50% { content: "4"; }
+            60% { content: "3"; }
+            70% { content: "2"; }
+            80% { content: "1"; }
+            90% { content: "0"; }
+            100% { content: "0"; }
+        }
+
+        /* Animating the seconds (ones place) */
+        @keyframes seconds {
+            0% { content: "9"; }
+            10% { content: "8"; }
+            20% { content: "7"; }
+            30% { content: "6"; }
+            40% { content: "5"; }
+            50% { content: "4"; }
+            60% { content: "3"; }
+            70% { content: "2"; }
+            80% { content: "1"; }
+            90% { content: "0"; }
+            100% { content: "0"; }
+        }
+
+        /* Placeholder for animation effect on digital clock */
+        .minutes:before {
+            content: "5";
+            animation: minutes 300s steps(5) forwards;
+        }
+
+        .tens:before {
+            content: "9";
+            animation: tens 60s steps(10) infinite;
+        }
+
+        .seconds:before {
+            content: "9";
+            animation: seconds 10s steps(10) infinite;
+        }
+
+        .message {
+            display: none;
+            color: red;
+            font-size: 4rem;
+            position: absolute;
+        }
+
+        /* When the countdown ends, show the message */
+        @keyframes unlock {
+            from { display: none; }
+            to { display: block; }
+        }
+
+        .unlock:before {
+            content: "Unlocked";
+            animation: unlock 0s 300s forwards;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="countdown">
+        <div class="digit minutes"></div>:<div class="digit tens"></div><div class="digit seconds"></div>
+    </div>
+
+    <div class="message unlock"></div>
+
+</body>
+</html>

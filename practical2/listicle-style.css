@@ -1,0 +1,101 @@
+/* General Styles */
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url('abd.jpeg');
+    background-size: cover;
+    background-position: top;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 36px;
+    color: white;
+    text-align: center;
+}
+
+/* Profile Styles */
+.profile {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+.profile {
+    position: absolute;
+    top: 460px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.profile img {
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-right: 20px;
+}
+
+.profile p {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.profile p em {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Content Section Styles */
+.content section {
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    width: 66.67%;
+}
+
+.content section h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+}
+
+.content section h2 a {
+    color: #42b4d6;
+    text-decoration: none;
+}
+
+.content section h2 a:hover {
+    text-decoration: underline;
+}
+
+.content section img {
+    width: 40%; /* Make images smaller */
+    border-radius: 15px; /* Round the corners more */
+    margin: 20px 0;
+}
+
+.content section p {
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.content section p strong {
+    font-weight: bold;
+}
